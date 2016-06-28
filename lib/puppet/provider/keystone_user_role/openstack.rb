@@ -112,7 +112,7 @@ Puppet::Type.type(:keystone_user_role).provide(
     if projname.nil?
       @domain = domname # no project specified, so must be a domain
     else
-      @domain = nil # not a domain specific role
+      @domain = 'default' # not a domain specific role
     end
     @domain
   end

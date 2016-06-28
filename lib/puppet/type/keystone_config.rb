@@ -41,4 +41,7 @@ Puppet::Type.newtype(:keystone_config) do
     defaultto false
   end
 
+  newparam(:path) do
+    desc 'A way to override the target file where settings are managed.'
+  end
 end

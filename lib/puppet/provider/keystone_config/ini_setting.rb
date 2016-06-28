@@ -21,7 +21,10 @@ Puppet::Type.type(:keystone_config).provide(
 
   # added for backwards compatibility with older versions of inifile
   def file_path
-    self.class.file_path
+    if resource[:path]
+      resource[:path]
+    else
+      self.class.file_path
+    end
   end
-
 end
